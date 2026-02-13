@@ -1,6 +1,11 @@
 # AI Child Conversation App
 
+[![Deployed on Vercel](https://vercel.com/button)](https://your-app-url.vercel.app)
+
 A real-time AI-powered voice conversation interface for children that analyzes images and engages in interactive conversations.
+
+## 🚀 **Live Demo**
+👉 **Deployed Application:** [https://ai-child-conversation-app.vercel.app](https://ai-child-conversation-app.vercel.app)
 
 ## 🌟 Features
 

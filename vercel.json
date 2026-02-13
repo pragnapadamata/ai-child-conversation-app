@@ -4,10 +4,6 @@
     {
       "src": "web/package.json",
       "use": "@vercel/next"
-    },
-    {
-      "src": "api/package.json",
-      "use": "@vercel/node"
     }
   ],
   "routes": [
@@ -20,9 +16,6 @@
       "dest": "/web/$1"
     }
   ],
-  "env": {
-    "NEXT_PUBLIC_API_URL": "/api"
-  },
   "functions": {
     "api/index.ts": {
       "maxDuration": 30
