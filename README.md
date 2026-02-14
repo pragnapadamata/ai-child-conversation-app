@@ -5,7 +5,7 @@
 A real-time AI-powered voice conversation interface for children that analyzes images and engages in interactive conversations.
 
 ## 🚀 **Live Demo**
-👉 **Deployed Application:** [https://ai-child-conversation-app.vercel.app](https://ai-child-conversation-app.vercel.app)
+👉 **Deployed Application:** https://vercel.com/padamata-pragna-sri-lalithas-projects/ai-child-conversation-app-api/FWJXc4nu9aNsAt6p4xWnpq7T6gYq
 
 ## 🌟 Features
 
