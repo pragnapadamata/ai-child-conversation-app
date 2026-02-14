@@ -59,7 +59,7 @@ export const generateConversationResponse = async (
   try {
     const messages = [
       {
-        role: 'system' as const,
+        role: 'system',
         content: `You are a friendly AI assistant having a conversation with a child about an image. 
         ${imageDescription ? `The image shows: ${imageDescription}` : ''}
         Keep responses:
@@ -71,7 +71,7 @@ export const generateConversationResponse = async (
       },
       ...conversationHistory.slice(-6), // Keep last 6 messages for context
       {
-        role: 'user' as const,
+        role: 'user',
         content: message,
       },
     ];
