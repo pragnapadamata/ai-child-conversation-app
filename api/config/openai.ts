@@ -16,18 +16,18 @@ export const analyzeImageWithAI = async (imageBase64: string): Promise<{
       model: 'gpt-4-vision-preview',
       messages: [
         {
-          role: 'system' as const,
+          role: 'system',
           content: 'You are a friendly AI assistant for children. Analyze the image and provide a child-friendly description and conversation starter. Respond in JSON format with: description (simple, engaging), conversationStarter (question to start conversation), suggestedTopics (array of 3-5 topics to discuss).',
         },
         {
-          role: 'user' as const,
+          role: 'user',
           content: [
             {
-              type: 'text' as const,
+              type: 'text',
               text: 'Analyze this image for a conversation with a child:',
             },
             {
-              type: 'image_url' as const,
+              type: 'image_url',
               image_url: {
                 url: `data:image/jpeg;base64,${imageBase64}`,
               },
@@ -59,7 +59,7 @@ export const generateConversationResponse = async (
   try {
     const messages = [
       {
-        role: 'system' as const,
+        role: 'system',
         content: `You are a friendly AI assistant having a conversation with a child about an image. 
         ${imageDescription ? `The image shows: ${imageDescription}` : ''}
         Keep responses:
@@ -71,14 +71,14 @@ export const generateConversationResponse = async (
       },
       ...conversationHistory.slice(-6), // Keep last 6 messages for context
       {
-        role: 'user' as const,
+        role: 'user',
         content: message,
       },
     ];
 
     const response = await openai.chat.completions.create({
       model: 'gpt-3.5-turbo',
-      messages,
+      messages: messages as any[],
       max_tokens: 100,
       temperature: 0.8,
     });
