@@ -16,18 +16,18 @@ export const analyzeImageWithAI = async (imageBase64: string): Promise<{
       model: 'gpt-4-vision-preview',
       messages: [
         {
-          role: 'system',
+          role: 'system' as const,
           content: 'You are a friendly AI assistant for children. Analyze the image and provide a child-friendly description and conversation starter. Respond in JSON format with: description (simple, engaging), conversationStarter (question to start conversation), suggestedTopics (array of 3-5 topics to discuss).',
         },
         {
-          role: 'user',
+          role: 'user' as const,
           content: [
             {
-              type: 'text',
+              type: 'text' as const,
               text: 'Analyze this image for a conversation with a child:',
             },
             {
-              type: 'image_url',
+              type: 'image_url' as const,
               image_url: {
                 url: `data:image/jpeg;base64,${imageBase64}`,
               },
@@ -59,7 +59,7 @@ export const generateConversationResponse = async (
   try {
     const messages = [
       {
-        role: 'system',
+        role: 'system' as const,
         content: `You are a friendly AI assistant having a conversation with a child about an image. 
         ${imageDescription ? `The image shows: ${imageDescription}` : ''}
         Keep responses:
@@ -71,7 +71,7 @@ export const generateConversationResponse = async (
       },
       ...conversationHistory.slice(-6), // Keep last 6 messages for context
       {
-        role: 'user',
+        role: 'user' as const,
         content: message,
       },
     ];
